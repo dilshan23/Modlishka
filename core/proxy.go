@@ -82,6 +82,8 @@ func (p *ReverseProxy) rewriteResponse(r *http.Response) (err error) {
 		log.Errorf("%+v", err)
 		return
 	}
+	fmt.Println(buffer)
+	
 
 	log.Debugf("[rw] Rewriting Response Body for (%+v): status[%d] type[%+v] encoding[%+v] uncompressedBody[%d bytes]",
 		p.Target, response.StatusCode, response.Header.Get("Content-Type"),
